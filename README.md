@@ -3,7 +3,7 @@ A zoo of API wrapper for connecting to DialPort
 
 ## Protocol:
 ### Initialize a New Session
-POST http://localhost:port/init
+POST http://localhost:[YOUR_SYSTEM_NAME]/init
 
 ```javascript
 {
@@ -13,7 +13,7 @@ POST http://localhost:port/init
 ```
 
 ### Get the Next Response of a Ongoing Session
-POST http://locahost:port/next
+POST http://locahost:[YOUR_SYSTEM_NAME]/next
 
 ```javascript
 {
