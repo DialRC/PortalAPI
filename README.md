@@ -1,4 +1,4 @@
-# DialportAPI
+# PortalAPI
 A zoo of API wrapper for connecting to DialPort 
 
 ## Protocol:
