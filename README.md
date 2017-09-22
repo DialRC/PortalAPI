@@ -115,3 +115,30 @@ Java: [JAVA Spark Framework](https://github.com/perwendel/spark)
 Python: [Flask](http://flask.pocoo.org)
 
 Javascript: [Nodejs]() 
+
+## Interested in working with us?
+We are happy to hear that you'd like to connect to DialPort. 
+
+**Please read the overall process of connecting to DialPort:** 
+
+1) Please email to Maxine Eskenazi (max@cs.cmu.edu) including the description of your system as follows:
+
+	(An Example)
+	> Organization: Carnegie Mellon University
+	> Contact person in your organization: Kyusong Lee (email: kyusonglee@gmail.com)
+	> Domain (for example, weather, restaurants) : open domain
+	> Language: English
+	> Name of your system: Qubot
+	> Description: Qubot is a chat-oriented dialog system. ..... 
+	> Interface (Describe the interface you presently use - microphone, camera, avatar, 3D, etc.): Just a text input using keyboard.
+	> Keywords: chatbot, question answering, 
+	> Examples of utterances that your system would handle: who is the president of United States?, what is the highest mountain in the world?..,
+	> Schedule (when can we try your system, when could you try a connection): We would like to contribute the system in late June. Currently our system is being tested internally. 
+
+2) We will give the detailed explanation and some sample code for DialPort integration
+
+3) First, the system will connect to the Dev version of DialPort and be tested internally by both the DialPort team and your group. 
+
+4) When the system is robust enough, the system will be connected to the master version.
+
+If you have any questions, please feel free to contact us.
