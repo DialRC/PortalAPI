@@ -21,8 +21,8 @@ Start a new session with your dialog system. If successful, the server will retu
   
 **Body Data**
 
-    { sessionID: USR_1234,
-      timeStamp: "yyyy-MM-dd'T'HH-mm-ss.SSS"
+    { "sessionID": "USR_1234",
+      "timeStamp": "yyyy-MM-dd'T'HH-mm-ss.SSS"
     }
      
 **Success Response (200):** 
