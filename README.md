@@ -7,7 +7,6 @@
 ## Example
 
 ## API Documentations:
-### Initialize a New Session
 **Create a new session**
 
 Start a new session with your dialog system. If successful, the server will return an JSON containing the session ID.
@@ -35,19 +34,38 @@ Start a new session with your dialog system. If successful, the server will retu
 	  "timeStamp": "yyyy-MM-dd'T'HH-mm-ss.SSS",
 	  "terminal": false
 	}
-```
 
 ### Get the Next Response of a Ongoing Session
-POST http://locahost:[YOUR_SYSTEM_NAME]/next
+**Get your system next response**
 
-```javascript
-{
-    sessionID: "USR_1234",
-    text: "I guess the answer is APPLE", 
-    asrConf: 0.9,
-    timeStamp: "yyyy-MM-dd'T'HH-mm-ss.SSS"
-}
-```
+For a ongoing session, Portal will use this API to obtain the next system response from you dialog systems.
+
+**URL**
+
+    /next
+
+**Method:**
+
+   `POST`
+  
+**Body Data**
+
+	{
+	    "sessionID": "USR_1234",
+	    "text": "I guess the answer is APPLE", 
+	    "asrConf": 0.9,
+	    "timeStamp": "yyyy-MM-dd'T'HH-mm-ss.SSS"
+	}
+	     
+**Success Response (200):** 
+	
+	{
+	  "sessionID": "USR_1234",
+	  "sys": "This word starts with A",
+	  "version": "1.0-xxx",
+	  "timeStamp": "yyyy-MM-dd'T'HH-mm-ss.SSS",
+	  "terminal": false
+	}
 
 ### Expected Return Format
 
