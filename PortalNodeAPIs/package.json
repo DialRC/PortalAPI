@@ -1,0 +1,19 @@
+{
+  "name": "nodeapis",
+  "version": "1.0.0",
+  "description": "An example toy server for Portal connection",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yulun Du",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "express": "^4.15.4"
+  },
+  "start": "nodemon server.js"
+}
