@@ -67,18 +67,35 @@ For a ongoing session, Portal will use this API to obtain the next system respon
 	  "terminal": false
 	}
 
-### Expected Return Format
+**Terminate a session with your system**
 
-All the POST requests will have the same return JSON format. 
-```javascript
-{
-    sessionID: "USR_1234",
-    sys: "This word starts with A",
-    version: "1.0-xxx",
-    timeStamp: "yyyy-MM-dd'T'HH-mm-ss.SSS"，
-    terminal: False,
-}
-```
+Portal sometimes (very rarely) wants to terminate an ongoing session with your dialog system (e.g. due to loss connection, conversation failure etc.)
+
+**URL**
+
+    /end
+
+**Method:**
+
+   `POST`
+  
+**Body Data**
+
+	{
+	    "sessionID": "USR_1234",
+	    "timeStamp": "yyyy-MM-dd'T'HH-mm-ss.SSS"
+	}
+	     
+**Success Response (200):** 
+	
+	{
+	  "sessionID": "USR_1234",
+	  "sys": "Goodbye",
+	  "version": "1.0-xxx",
+	  "timeStamp": "yyyy-MM-dd'T'HH-mm-ss.SSS",
+	  "terminal": true
+	}
+	
 ### Extra Parameters:
 We welcome any system to expect extra input parameters or return extra parameters for better interaction purpose. 
 Here are some example extra parameters:
