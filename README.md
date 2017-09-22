@@ -8,13 +8,33 @@
 
 ## API Documentations:
 ### Initialize a New Session
-POST http://localhost:[YOUR_SYSTEM_NAME]/init
+**Create a new session**
 
-```javascript
-{
-    sessionID: "USR_1234",
-    timeStamp: "yyyy-MM-dd'T'HH-mm-ss.SSS"
-}
+Start a new session with your dialog system. If successful, the server will return an JSON containing the session ID.
+
+**URL**
+
+    /init
+
+**Method:**
+
+   `POST`
+  
+**Body Data**
+
+    { sessionID: USR_1234,
+      timeStamp: "yyyy-MM-dd'T'HH-mm-ss.SSS"
+    }
+     
+**Success Response (200):** 
+	
+	{
+	  "sessionID": "USR_1234",
+	  "sys": "This word starts with A",
+	  "version": "1.0-xxx",
+	  "timeStamp": "yyyy-MM-dd'T'HH-mm-ss.SSS",
+	  "terminal": false
+	}
 ```
 
 ### Get the Next Response of a Ongoing Session
