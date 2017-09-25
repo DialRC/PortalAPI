@@ -4,8 +4,21 @@
 The advent of Siri and other agents has generated interest in spoken dialog research, sparking the imagination of many and leading them to believe in the usefulness of speaking to intelligent agents. The research community can profit from this interest to gather much needed real user data by joining a service for the general public. The service will be the front end of many different academic dialog systems in order to serve more diverse requests. The data gathered from such a service can make dialog systems more robust and be used to carry out comparative studies. Industry has already collected large data sets and sometimes retains pools of real users. They are viewed as strategic competitive resources and so not shared with the research community. Much fundamental research remains to be done, such as signal processing in noisy conditions' recognition of groups of difficult users (like the elderly and non-natives), management of complex dialogs (such as multi party meetings, negotiations, and multimodal interaction), and the automatic use of meta linguistic information such as prosody. It is difficult for any one group to collect a significant amount of real user data. The users must be found and their interest maintained while the interface must be kept up to date. By having one data-gathering portal that all dialog systems can be connected to, the task for each participating site is easier and the portal is more interesting to potential users. Potential users find a variety of interesting applications and can choose which ones fulfill their needs at any given time. Also, with one central site (the portal), only the researchers maintaining the portal itself taken on the task of attracting users. The DialPort portal was created for this purpose.
 
 ## How the portal Works
-Figure 
 ![Image](images/overview.png)
+
+** Figure 1**
+
+Figure 1 shows an overview about the relations between the Portal and agents. Agents here are defined as any remote dailog systems that have joined Portal. 
+
+The Portal is responsible for facing the users via web or mobile interfaces. It will also provide the following services to all the agents:
+
+- ASR/TTS
+- Meta Dialog Management
+- Domain Tracking
+- Context Keeping
+- Agent Selection
+
+As for an agent, it has to implement an HTTP API server that fulfils the Portal API protocol (defined below). 
 
 ## Example
 
