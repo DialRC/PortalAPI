@@ -37,7 +37,7 @@ For a remote agent, all it needs to do is to implement the following 3 API inter
 
 Very simple!
 
-### Create a new session ###
+### 1. Create a new session ###
 
 Start a new session with your dialog system. If successful, the server will return an JSON containing the session ID.
 
@@ -65,7 +65,7 @@ Start a new session with your dialog system. If successful, the server will retu
 	  "terminal": false
 	}
 
-### Get the Next Response of an Ongoing Session
+### 2. Get the Next Response of an Ongoing Session
 
 For an ongoing session, the portal will use this API to obtain the next system response from your dialog system.
 
@@ -96,7 +96,7 @@ For an ongoing session, the portal will use this API to obtain the next system r
 	  "terminal": false
 	}
 
-### Terminate a session with your system ###
+### 3. Terminate a session with your system ###
 
 The portal sometimes (very rarely) wants to terminate an ongoing session with your dialog system (e.g. due to a lost connection, conversation failure etc.)
 
