@@ -29,7 +29,15 @@ As for an agent, it has to implement an HTTP API server that fulfils the Portal 
 ## Example
 
 ## API Documentations:
-**Create a new session**
+For a remote agent, all it needs to do is to implement the following 3 API interfaces. They are: 
+
+1. /init
+2. /next
+3. /end
+
+Very simple!
+
+### Create a new session ###
 
 Start a new session with your dialog system. If successful, the server will return an JSON containing the session ID.
 
@@ -58,7 +66,6 @@ Start a new session with your dialog system. If successful, the server will retu
 	}
 
 ### Get the Next Response of an Ongoing Session
-**Get your system next response**
 
 For an ongoing session, the portal will use this API to obtain the next system response from your dialog system.
 
@@ -89,7 +96,7 @@ For an ongoing session, the portal will use this API to obtain the next system r
 	  "terminal": false
 	}
 
-**Terminate a session with your system**
+### Terminate a session with your system ###
 
 The portal sometimes (very rarely) wants to terminate an ongoing session with your dialog system (e.g. due to a lost connection, conversation failure etc.)
 
