@@ -10,7 +10,7 @@
 from flask import Flask, request, jsonify
 app = Flask(__name__)
 from datetime import datetime
-from RemoteAgent import * # Import your code
+from RemoteAgent import * # Import your bot
 
 usrStacks = {}
 date_format = "%Y-%m-%d'T'%H%-%M-%S.SSS"
@@ -18,46 +18,48 @@ date_format = "%Y-%m-%d'T'%H%-%M-%S.SSS"
 def add_message(uuid):
     if uuid == "init":
         content = request.json
+        #A message from DialPort: sessionID, timeStamp
         sessionID = content["sessionID"]
-        usrStacks[sessionID] = API()
-        Instance = {}
-        Instance["sessionID"] = sessionID # DialPort will send sessionID. 
-        Instance["version"] = "0.1" # Please provide your system version. 
-        Instance["terminal"] = False
-        if "timeStamp" in content:
-            Instance["timeStamp"] = content["timeStamp"]
-        else:
-            Instance["timeStamp"] = datetime.now().isoformat() 
-        Instance["sys"] = "Welcome to Mybot... " # Introduction Message
-        Instance["imageurl"] = "https://skylar.speech.cs.cmu.edu/image/movie.jpg" # Put an image url to show on the screen."
-        return jsonify(Instance)
+        timeStamp = content["timeStamp"]
+        
+        # Assign an instance to Dictionary 
+        usrStacks[sessionID] = API() 
+
+        #A message to DialPort: sessionID, version, terminal, sys, and imageurl
+        Output = {}
+        Output["sessionID"] = sessionID # DialPort will send sessionID. 
+        Output["version"] = "0.1" # Please provide your system version. 
+        Output["terminal"] = False
+        Output["timeStamp"] = datetime.now().isoformat() 
+        Output["sys"] = "Welcome to Mybot... " # Introduction Message
+        Output["imageurl"] = "https://skylar.speech.cs.cmu.edu/image/movie.jpg" # Put an image url to show on the screen."
+        return jsonify(Output)
 
     if uuid == "next":
         content = request.json
+        #A message from DialPort: sessionID, text (an user input), asrConf, timeStamp
         sessionID = content["sessionID"]
         text =  content["text"]
-        Instance = {}
-        if "timeStamp" in content:
-            Instance["timeStamp"] = content["timeStamp"]
-        else:
-            Instance["timeStamp"] = datetime.now().isoformat() 
         asrConf = content["asrConf"] 
-        Instance["sessionID"] = sessionID
-        Instance["version"] = "0.1"
+        timeStamp = content["timeStamp"]
+        
+        # A reponse from your bot
         response = usrStacks[sessionID].GetResponse(text)
-
+        
+        # A message to DialPort: sessionID, version, sys (system utterance), terminal (true if the end of the dialog), imageurl
+        Output = {}
+        Output["sessionID"] = sessionID
+        Output["timeStamp"] = datetime.now().isoformat() 
+        Output["version"] = "0.1"
         if response["slu"]["act"] == "exit":
-            Instance["sys"] = "Goodbye. See you later"
-            Instance["terminal"] = True # At the end of the dialog, please send us True
+            Output["sys"] = "Goodbye. See you later"
+            Output["terminal"] = True # At the end of the dialog, please send us True
             del usrStacks[sessionID]
         else:
-            Instance["imageurl"] = response["imageurl"]
-            Instance["terminal"] = False
-            Instance["sys"] = response["sys"]
-        return jsonify(Instance)
-
-    if uuid == "test":
-        return jsonify({"check":"fine"})
+            Output["imageurl"] = response["imageurl"]
+            Output["terminal"] = False
+            Output["sys"] = response["sys"]
+        return jsonify(Output)
 
 if __name__ == '__main__':
-    app.run(host= '0.0.0.0',port= 9990, debug=True)
+    app.run(host= '0.0.0.0',port= 3000, debug=True)
