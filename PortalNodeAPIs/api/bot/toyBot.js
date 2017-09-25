@@ -33,3 +33,18 @@ exports.next = function(req, res) {
 
     res.json(example_return);
 };
+
+
+exports.end = function(req, res) {
+    // what you get from portal
+    console.log("Portal will end the current session: " + req.body.sessionID);
+    console.log("sessionID is: " + req.body.sessionID);
+    console.log("timeStamp is: " + req.body.timeStamp);
+
+    // what you send back
+    example_return.sessionID = req.body.sessionID;
+    example_return.sys = "Goodbye!"; 
+    example_return.terminal = true;
+
+    res.json(example_return);
+};
