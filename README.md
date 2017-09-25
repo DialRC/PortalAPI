@@ -52,13 +52,13 @@ The above transitions can be compactly represented in the finite-state machine i
 
 ![Image](images/fsm.png)
 
-** Figure 2 **
+**Figure 2**
 
 ## Development Cycle
 
 ![Image](images/flow.png)
 
-** Figure 3 **
+**Figure 3**
 
 Figure 3 shows the steps that you need to take to become a part of DialPort Portal.
 
