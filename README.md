@@ -1,16 +1,16 @@
 # DialPort Portal Tutorial
 
 * [Introduction](#introduction)
-  * [How the portal Works](#how-the-portal-works)
-  * [Development Cycle](#development-cycle)
-  * [API Documentations:](#api-documentations)
-    * [1\. Create a new session](#1-create-a-new-session)
-    * [2\. Get your system's next response](#2-get-your-systems-next-response)
-    * [3\. Terminate a session with your system](#3-terminate-a-session-with-your-system)
-    * [Extra Parameters](#extra-parameters)
-    * [Timezone](#timezone)
-    * [Example Server Templates](#example-server-templates)
-  * [Interested in working with us?](#interested-in-working-with-us)
+* [How the portal Works](#how-the-portal-works)
+* [Development Cycle](#development-cycle)
+* [API Documentations:](#api-documentations)
+  * [1\. Create a new session](#1-create-a-new-session)
+  * [2\. Get your system's next response](#2-get-your-systems-next-response)
+  * [3\. Terminate a session with your system](#3-terminate-a-session-with-your-system)
+  * [Extra Parameters](#extra-parameters)
+  * [Timezone](#timezone)
+  * [Example Server Templates](#example-server-templates)
+* [Interested in working with us?](#interested-in-working-with-us)
 
 
 ## Introduction
