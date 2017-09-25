@@ -7,5 +7,8 @@ module.exports = function(app) {
     .post(yourchatbot.init);
 
   app.route('/next')
-    .post(yourchatbot.next)
+    .post(yourchatbot.next);
+
+  app.route('/end')
+    .post(yourchatbot.end);
 };
