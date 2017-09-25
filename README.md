@@ -48,7 +48,19 @@ Generally speaking, the Portal and an agent will interact as follows:
 5. After the selected agent decides to finish the conversation, the control is back to the Portal and we go back to *Step 1*.
 6. Rarely, the remote agent does not perform well. Portal will end the session via (*/end*) and go back to *Step 1*. 
 
+The above transitions can be compactly represented in the finite-state machine in Figure 2.
+
+![Image](images/fsm.png)
+
+** Figure 2 **
+
 ## Development Cycle
+
+![Image](images/flow.png)
+
+** Figure 3 **
+
+Figure 3 shows the steps that you need to take to become a part of DialPort Portal.
 
 ## API Documentations:
 For a remote agent, all it needs to do is to implement the following 3 API interfaces. They are: 
