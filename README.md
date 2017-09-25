@@ -36,9 +36,18 @@ The Portal is responsible for facing the users via web or mobile interfaces. It 
 - Context Keeping
 - Agent Selection
 
-As for an agent, it has to implement an HTTP API server that fulfils the Portal API protocol (defined below). 
+As for an agent, it has to implement an HTTP API server that supports 3 Portal APIs /init, /next, /end. (defined below). 
 
-## Example
+Generally speaking, the Portal and an agent will interact as follows:
+
+1. The Portal will first interact with a user to find out what the user is interested in (*domain tracking*).
+2. Portal will try to select an remote agent that matches the user's needs the best (*agent selection*).
+3. Portal then starts a new remote session with the selected agent via (*/init*).
+4. Portal will then pass every user utterances to the selected agent via (*/next*). The user is effectively talking to the selected agent.
+5. After the selected agent decides to finish the conversation, the control is back to the Portal and we go back to *Step 1*.
+5.1 Rarely, the remote agent does not perform well. Portal will end the session via (*/end*) and go back to *Step 1*. 
+
+## Development Cycle
 
 ## API Documentations:
 For a remote agent, all it needs to do is to implement the following 3 API interfaces. They are: 
