@@ -2,6 +2,9 @@
 A zoo of API wrapper for connecting to DialPort (Python Flask version)
 
 # Code
+- You need to import your bot like RemoteAgent.py
+
+
 ```python
 from flask import Flask, request, jsonify
 app = Flask(__name__)
