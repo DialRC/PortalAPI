@@ -1,15 +1,16 @@
 # DialPort Portal Tutorial
 
-#### Table of Content
 * [Introduction](#introduction)
-* [How the portal Works](#how-the-portal-works)
-* [Example](#example)
-* [API Documentations:](#api-documentations)
-  * [Get the Next Response of an Ongoing Session](#get-the-next-response-of-an-ongoing-session)
-  * [Extra Parameters:](#extra-parameters)
-  * [Timezone\.](#timezone)
-  * [Example Framework](#example-framework)
-* [Interested in working with us?](#interested-in-working-with-us)
+  * [How the portal Works](#how-the-portal-works)
+  * [Development Cycle](#development-cycle)
+  * [API Documentations:](#api-documentations)
+    * [1\. Create a new session](#1-create-a-new-session)
+    * [2\. Get your system's next response](#2-get-your-systems-next-response)
+    * [3\. Terminate a session with your system](#3-terminate-a-session-with-your-system)
+    * [Extra Parameters](#extra-parameters)
+    * [Timezone](#timezone)
+    * [Example Server Templates](#example-server-templates)
+  * [Interested in working with us?](#interested-in-working-with-us)
 
 
 ## Introduction
@@ -45,7 +46,7 @@ Generally speaking, the Portal and an agent will interact as follows:
 3. Portal then starts a new remote session with the selected agent via (*/init*).
 4. Portal will then pass every user utterances to the selected agent via (*/next*). The user is effectively talking to the selected agent.
 5. After the selected agent decides to finish the conversation, the control is back to the Portal and we go back to *Step 1*.
-5.1 Rarely, the remote agent does not perform well. Portal will end the session via (*/end*) and go back to *Step 1*. 
+6. Rarely, the remote agent does not perform well. Portal will end the session via (*/end*) and go back to *Step 1*. 
 
 ## Development Cycle
 
@@ -86,7 +87,7 @@ Start a new session with your dialog system. If successful, the server will retu
 	  "terminal": false
 	}
 
-### 2. Get the Next Response of an Ongoing Session
+### 2. Get your system's next response
 
 For an ongoing session, the portal will use this API to obtain the next system response from your dialog system.
 
@@ -146,7 +147,7 @@ The portal sometimes (very rarely) wants to terminate an ongoing session with yo
 	  "terminal": true
 	}
 	
-### Extra Parameters:
+### Extra Parameters
 We are open to any system expecting extra input parameters or returning extra parameters for better interaction purpose. 
 Here are some example extra parameters:
 
@@ -154,28 +155,30 @@ Input: initial domain that user is looking for, user profile and etc.
 
 Output: nonverbal behavior of the agent. Multimedia outputs (photo links, meta information and etc.)
 
-### Timezone.
+### Timezone
 For easier synchronization with the DialPort server logging system. Use UTC-4 timezone for all time stamps. 
 
 
-### Example Framework
-Java: [JAVA Spark Framework](https://github.com/perwendel/spark)
+### Example Server Templates
+We provide server templates implemented in 3 popular frameworks for your convenience. 
 
-Python: [Flask](http://flask.pocoo.org)
+Java: [JAVA Spark Framework](https://github.com/DialRC/RestMrClue)
 
-Javascript: [Nodejs]() 
+Python: [Flask](https://github.com/DialRC/PortalAPI/tree/master/PortalAPIforPythonFlask)
+
+Javascript: [Nodejs](https://github.com/DialRC/PortalAPI/tree/master/PortalNodeAPIs) 
 
 ## Interested in working with us?
 We are happy to hear that you'd like to connect to DialPort. 
 
 **Please read the overall process of connecting to DialPort:** 
 
-1) Please email Dr. Maxine Eskenazi (max@cs.cmu.edu) and include the following description of your system :
+1) Please email Dr. Maxine Eskenazi (max at cs dot cmu dot edu) and include the following description of your system :
 
 	(An Example)
 	> Organization: Carnegie Mellon University
 	>
-	> Contact person in your organization: Kyusong Lee (email: kyusonglee@gmail.com)
+	> Contact person in your organization: Kyusong Lee (email: kyusonglee at gmail dot com)
 	>
 	> Domain (for example, weather, restaurants) : open domain
 	>
