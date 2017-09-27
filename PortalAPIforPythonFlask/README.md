@@ -79,10 +79,9 @@ if __name__ == '__main__':
 ```
 
 # Dependency
-```
-python2.7 
-[flask](http://flask.pocoo.org/)
-```
+- python2.7 
+- [flask](http://flask.pocoo.org/)
+
 
 # Run
 ```
