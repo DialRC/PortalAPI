@@ -57,7 +57,23 @@ def add_message(uuid):
             Output["terminal"] = False
             Output["sys"] = response["sys"]
         return jsonify(Output)
-
+        
+    if uuid == "end":  #Terminate a session with your system
+        content = request.json
+        #A message from DialPort: sessionID, timeStamp
+        sessionID = content["sessionID"]
+        timeStamp = content["timeStamp"]
+        
+        # A message to DialPort: sessionID, version, sys (system utterance), terminal (true if the end of the dialog)
+        Output = {}
+        Output["sessionID"] = sessionID
+        Output["timeStamp"] = datetime.now().isoformat() 
+        Output["version"] = "0.1"
+        Output["sys"] = "Goodbye. See you later"
+        Output["terminal"] = True # At the end of the dialog, please send us True
+        del usrStacks[sessionID]
+        return jsonify(Output)
+        
 if __name__ == '__main__':
     app.run(host= '0.0.0.0',port= 3000, debug=True)
 ```
@@ -65,7 +81,7 @@ if __name__ == '__main__':
 # Dependency
 ```
 python2.7 
-flask (http://flask.pocoo.org/)
+[flask](http://flask.pocoo.org/)
 ```
 
 # Run
